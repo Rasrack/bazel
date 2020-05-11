@@ -193,8 +193,7 @@ public final class InstrumentedFilesCollector {
           continue;
         }
         for (Artifact artifact : dep.getProvider(FileProvider.class).getFilesToBuild().toList()) {
-          if (artifact.isSourceArtifact() &&
-              spec.instrumentedFileTypes.matches(artifact.getFilename())) {
+          if (spec.instrumentedFileTypes.matches(artifact.getFilename())) {
             localSourcesBuilder.add(artifact);
           }
         }
